@@ -22,35 +22,38 @@
 .warpIpt {
     display: flex;
     height: 40px;
+    border: #c5c5c5 solid 1px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 5px 0px;
 }
 
-.ipt1 {
+.ipt {
     border: none;
     height: 30px;
     width: 260px;
-}
-.ipt2 {
-    border: none;
-    height: 30px;
-    width: 260px;
+    outline: none;
 }
 
 .count {
     width: 16px;
     height: 20px;
     background: url(../assets/2.jpg) no-repeat;
+    margin: 5px;
 }
 
 .key {
     width: 16px;
     height: 20px;
     background: url(../assets/1.jpg) no-repeat;
+    margin: 5px;
 }
 
 .keyEye {
     width: 16px;
     height: 20px;
     background: url(../assets/3.jpg) no-repeat;
+    margin: 5px;
 }
 
 .login {
@@ -58,6 +61,13 @@
     border: none;
     border-radius: 5px;
     color: #fff;
-    height: 30px;
-    width: 300px;
+    height: 45px;
+    width: 324px;
+}
+.help{
+    color: red;
+    font-size: 8px;
+    margin-top: -17px;
+    margin-left: 20px;
+    text-align: left;
 }

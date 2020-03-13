@@ -1,27 +1,24 @@
-import styles from './index.css';
-import { Fragment } from 'react';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import login from './login'
 
-export default function () {
-    return (
-        <Fragment >
-            <div className={styles.box} >
-                <div className={styles.conWarp}>
-                    <p> 服务管理后台 </p>
-                    <div className={`${styles.warpIpt}`}>
-                        <span className={`${styles.count} `}> </span>
-                        <input type="text" placeholder='账号' className={`${styles.ipt1} `} />
+export default class index extends Component {
+    render() {
+        return (
+            <div>
+                <Router>
+                    <ul className='navbar columns'>
+                        <li className='column'><Link to="/login">login</Link></li>
+                        {/* <li className='column'><Link to="/count">count</Link></li> */}
+                    </ul>
+
+                    <div>
+                        <Route path='/login' component={login} />
+                        {/* <Route path='/count' component={count} /> */}
 
                     </div>
-                    <div className={`${styles.warpIpt}`}>
-                        <span className={`${styles.key}`}> </span>
-                        <input type="text" placeholder='密码' className={`${styles.ipt2} `} />
-                        <span className={`${styles.keyEye}`}> </span>
-                    </div>
-                    <button className={styles.login} >登录</button>
-                </div>
-
-
+                </Router>
             </div>
-        </Fragment>
-    );
+        )
+    }
 }
