@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Fragment } from 'react';
 import styles from './index.css';
+import { connect } from 'dva';
 
-
-export default class login extends Component {
+class login2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,31 +15,25 @@ export default class login extends Component {
     }
     render() {
         return (
-            <div>
-                <Fragment >
-                    <div className={styles.box} >
-                        <div className={styles.conWarp}>
-                            <h1> 服务管理后台 </h1>
-                            <div className={`${styles.warpIpt}`}>
-                                <span className={`${styles.count} `}> </span>
-                                <input type="text" placeholder='账号' className={`${styles.ipt} `}
-                                    onChange={e => this.onIptChange(e, 'name')} value={this.state.name}
-                                    onBlur={e => { this.vaildate('name') }} />
-
-                            </div>
-                            {this.state.err.name ? <p className={styles.help}>{this.state.err.name}</p> : ''}
-                            <div className={`${styles.warpIpt}`}>
-                                <span className={`${styles.key}`}> </span>
-                                <input type="password" placeholder='密码' className={`${styles.ipt} `}
-                                    onChange={e => this.onIptChange(e, 'password')} value={this.state.password} />
-                                <span className={`${styles.keyEye}`}> </span>
-                            </div>
-                            <button className={styles.login} onClick={this.onSubmit.bind(this)}>登录</button>
-                        </div>
-
+            <div className={styles.box} >
+                <div className={styles.conWarp}>
+                    <h1> 服务管理后台 </h1>
+                    <div className={`${styles.warpIpt}`}>
+                        <span className={`${styles.count} `}> </span>
+                        <input type="text" placeholder='账号' className={`${styles.ipt} `}
+                            onChange={e => this.onIptChange(e, 'name')} value={this.state.name}
+                            onBlur={e => { this.vaildate('name') }} />
 
                     </div>
-                </Fragment>
+                    {this.state.err.name ? <p className={styles.help}>{this.state.err.name}</p> : ''}
+                    <div className={`${styles.warpIpt}`}>
+                        <span className={`${styles.key}`}> </span>
+                        <input type="password" placeholder='密码' className={`${styles.ipt} `}
+                            onChange={e => this.onIptChange(e, 'password')} value={this.state.password} />
+                        <span className={`${styles.keyEye}`}> </span>
+                    </div>
+                    <button className={styles.login} onClick={this.onSubmit.bind(this)}>登录</button>
+                </div>
             </div>
         )
     }
@@ -58,6 +51,13 @@ export default class login extends Component {
         this.setState({ err: error })
     }
     onSubmit() {
-        console.log(this.state);
-      }
+        this.props.dispatch({
+            type: 'login/login',
+            payload: {
+                'username': this.state.name,
+                'password': this.state.password,
+            },
+        })
+    }
 }
+export default connect()(login2)
