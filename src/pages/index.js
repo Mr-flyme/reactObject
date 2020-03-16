@@ -8,7 +8,7 @@ export default class index extends Component {
             <div>
                 <ul>
                     <li><Link to="/login">login</Link></li>
-                    <li><Link to="/list">list</Link></li>
+                    <li><Link to="/list">lists</Link></li>
                 </ul>
             </div>
         )
