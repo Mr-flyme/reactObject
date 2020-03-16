@@ -2,11 +2,12 @@ import request from '../utils/request';
 
 let url = '/api/auth/oauth/token'
 export default {
-    namespace: 'login',
+    namespace: 'loginServer',
     state: {
         userInfo: {
 
-        }
+        },
+        listState: []
     },
     effects: {
         *fetch({ payload }, { call, put }) {
@@ -22,6 +23,11 @@ export default {
                     payload
                 }
             });
+            console.log(res)
+            if (res.rescode === 1) {
+                history.push('/list')
+            }
+
             if (res.errorCode === 0) {
                 // Api._setCookie('userToken', res.access_token)
                 const userInfo = yield put({ type: 'getUserInfo' })
@@ -32,9 +38,24 @@ export default {
                 history.push('/')
             }
         },
+        *getList({ payload, history }, { call, put }) {
+            const res = yield call(request, "/api/users/1", {
+                method: 'GET',
+                body: {
+                    payload
+                }
+            });
+            // const userInfo = yield put({ type: 'listState' })
+            yield put({ type: 'save', payload: { listState:[...res.data] } });
+            console.log('res: ', res)
+            if (res.rescode === 1) {
+                console.log("success!!!!!")
+            }
+        }
     },
     reducers: {
         save(state, action) {
+            console.log('****',action)
             return { ...state, ...action.payload };
         },
     },
