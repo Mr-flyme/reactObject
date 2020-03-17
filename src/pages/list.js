@@ -15,31 +15,7 @@ class list extends Component {
         this.getInfo();
     }
     render() {
-        // // this.getInfo();
-        // const books = [
-        //     {
-        //         funName: '1', inver: '一号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        //         department: '研发中心', state: '已完成', action: '编辑'
-        //     },
-        //     {
-        //         funName: '2', inver: '一号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        //         department: '研发中心', state: '已完成', action: '编辑'
-        //     },
-        //     {
-        //         funName: '3', inver: '一号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        //         department: '研发中心', state: '已完成', action: '编辑'
-        //     },
-        //     {
-        //         funName: '4', inver: '一号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        //         department: '研发中心', state: '已完成', action: '编辑'
-        //     },
-        //     {
-        //         funName: '5', inver: '一号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        //         department: '研发中心', state: '已完成', action: '编辑'
-        //     },
-        // ];
         let books = this.props.list;
-        console.log(books)
         return (
             <Fragment>
                 <div>
@@ -105,7 +81,7 @@ class list extends Component {
                                             </select>
                                         </td>
                                         <td>{book.action}</td>
-                                    </tr> 
+                                    </tr>
                                 </tbody>)
                         })}
                     </table>
@@ -122,16 +98,6 @@ class list extends Component {
                 listState: list
             }
         })
-
-
-        // //获取被选中的值
-        // let states = 'states' + i
-        // console.log(e.target.value);
-        // this.setState({
-        //     //默认值改变
-        //     states: e.target.value
-        // })
-        // console.log(this.state)
     }
     getInfo() {
         this.props.dispatch({
@@ -142,7 +108,6 @@ class list extends Component {
 
 }
 function mapStateToProps(state) {
-    console.log('aaaa: ', state)
     return {
         list: state.loginServer.listState
     }

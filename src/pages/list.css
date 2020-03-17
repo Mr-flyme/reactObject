@@ -37,18 +37,22 @@ label {
     width: 60px;
     height: 30px;
 }
-.btnli{
-    position: absolute;
-    right: 270px;
-    top: 63px;
+
+.btnli {
+    box-sizing: border-box;
+    width: 282px;
+    padding-left: 152px;
 }
-th{
+
+th {
     width: 150px;
     background-color: #fafafa;
 }
-td{
+
+td {
     text-align: center;
 }
-tr{
+
+tr {
     height: 60px;
 }

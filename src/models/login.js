@@ -33,7 +33,10 @@ export default {
                 const userInfo = yield put({ type: 'getUserInfo' })
                 console.log(userInfo)
                 // Api.userInfo = res;
-                yield put({ type: 'save', payload: { userInfo: { ...userInfo.data, ...res.access_token } } });
+                yield put({
+                    type: 'save',
+                    payload: { userInfo: { ...userInfo.data, ...res.access_token } }
+                });
                 // callback && typeof callback === 'function' && callback(res.data);
                 history.push('/')
             }
@@ -46,16 +49,18 @@ export default {
                 }
             });
             // const userInfo = yield put({ type: 'listState' })
-            yield put({ type: 'save', payload: { listState:[...res.data] } });
-            console.log('res: ', res)
+
             if (res.rescode === 1) {
-                console.log("success!!!!!")
+                yield put({
+                    type: 'save',
+                    payload: { listState: [...res.data] }
+                });
             }
         }
     },
     reducers: {
         save(state, action) {
-            console.log('****',action)
+            console.log('****', action)
             return { ...state, ...action.payload };
         },
     },
