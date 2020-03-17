@@ -38,21 +38,21 @@
 .count {
     width: 16px;
     height: 20px;
-    background: url(../assets/2.jpg) no-repeat;
+    background: url(../../assets/2.jpg) no-repeat;
     margin: 5px;
 }
 
 .key {
     width: 16px;
     height: 20px;
-    background: url(../assets/1.jpg) no-repeat;
+    background: url(../../assets/1.jpg) no-repeat;
     margin: 5px;
 }
 
 .keyEye {
     width: 16px;
     height: 20px;
-    background: url(../assets/3.jpg) no-repeat;
+    background: url(../../assets/3.jpg) no-repeat;
     margin: 5px;
 }
 

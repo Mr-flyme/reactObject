@@ -8,8 +8,9 @@ export default {
       component: '../layouts/index',
       routes: [
         { path: '/', component: '../pages/index' },
-        { path: '/login', component: '../pages/login' },
-        { path: '/list', component: '../pages/list' }
+        { path: '/login', component: '../pages/login/login' },
+        { path: '/list', component: '../pages/list/list' },
+        { path: '/inputs', component: '../pages/inputs/inputs' }
       ]
     }
   ],
