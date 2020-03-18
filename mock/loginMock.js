@@ -24,28 +24,44 @@ export default {
     data: [
       {
         funName: '1', inver: '一号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        department: '研发中心', state: '3', action: '编辑'
+        department: '研发中心', state: '3', action: '编辑', id: 1
       },
       {
         funName: '2', inver: '2号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        department: '研发中心', state: '3', action: '编辑'
+        department: '研发中心', state: '3', action: '编辑', id: 2
       },
       {
         funName: '3', inver: '4号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        department: '研发中心', state: '3', action: '编辑'
+        department: '研发中心', state: '3', action: '编辑', id: 3
       },
       {
         funName: '4', inver: '5号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        department: '研发中心', state: '3', action: '编辑'
+        department: '研发中心', state: '3', action: '编辑', id: 4
       },
       {
         funName: '5', inver: '7号', serve: '公共区域', finTime: '2020-3-16', user: '专家',
-        department: '研发中心', state: '3', action: '编辑'
+        department: '研发中心', state: '3', action: '编辑', id: 5
       }]
   },
 
   // 支持自定义函数，API 参考 express@4
-  'POST /api/users/create': (req, res) => { res.end('OK'); },
+  'POST /api/users/create': (req, res) => {
+    console.log(req)
+    // if (req.username == 1) {
+    //   res.status('200').send()
+    //   res.data = {
+    //     name: xxx,
+    //     age: 20
+    //   }
+    // } else {
+    //   res.status('200').send()
+    //   res.data = {
+    //     name: 'ui',
+    //     age: 20
+    //   }
+    // }
+    res.end('OK');
+  },
 
   'GET /api/locat': {
     success: true,

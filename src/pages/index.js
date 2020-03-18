@@ -10,7 +10,6 @@ export default class index extends Component {
                     <li><Link to="/login">login</Link></li>
                     <li><Link to="/list">lists</Link></li>
                     <li><Link to="/inputs">inputs</Link></li>
-                    <li><Link to="/000111">000111</Link></li>
                 </ul>
             </div>
         )

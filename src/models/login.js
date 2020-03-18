@@ -1,6 +1,7 @@
 import request from '../utils/request';
 
-let url = '/api/auth/oauth/token'
+// let url = '/api/auth/oauth/token'
+let url = '/api/users/create'
 export default {
     namespace: 'loginServer',
     state: {

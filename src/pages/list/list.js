@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import styles from './list.css';
+import { Link, router } from 'react-router-dom'
 import { connect } from 'dva';
 
 class list extends Component {
@@ -43,7 +44,7 @@ class list extends Component {
                             <input type="text" className={styles.ipt} />
                         </li>
                         <li className={styles.btnli}>
-                            <button className={`${styles.btnblue}`}>查询</button>
+                            <button className={`${styles.btnblue}`} onClick={() => { this.getInfo() }}>查询</button>
                             <button className={`${styles.btn}`}>重置</button>
                         </li>
                     </ul>
@@ -73,14 +74,14 @@ class list extends Component {
                                         <td>{book.user}</td>
                                         <td>{book.department}</td>
                                         <td>
-                                            <select className={styles.sel} value={books.state}
+                                            <select className={styles.sel} value={book.state}
                                                 onChange={(e) => this.getValue(e, i)}>
                                                 <option value="1">已完成</option>
                                                 <option value="2">待定</option>
                                                 <option value="3">未完成</option>
                                             </select>
                                         </td>
-                                        <td>{book.action}</td>
+                                        <td><Link to={`/inputs?id=${book.id}`}>{book.action}</Link></td>
                                     </tr>
                                 </tbody>)
                         })}
@@ -95,7 +96,7 @@ class list extends Component {
         this.props.dispatch({
             type: 'loginServer/save',
             payload: {
-                listState: list
+                listState: [...list]     //注意此处！！ "listState: list" 写法不管用 因为监听为子数组 
             }
         })
     }
@@ -109,7 +110,7 @@ class list extends Component {
 }
 function mapStateToProps(state) {
     return {
-        list: state.loginServer.listState
+        list: state.loginServer.listState  //此处监听为子数组  尽量监听对象loginServer 数组容易出问题
     }
 }
 export default connect(mapStateToProps)(list);
