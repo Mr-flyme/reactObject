@@ -1,0 +1,45 @@
+.iptul {
+    display: flex;
+}
+
+.iptul li {
+    margin-right: 20px;
+    /* flex-grow: 1; */
+}
+
+.ipt {
+    border-radius: 5px;
+    height: 28px;
+    width: 300px;
+    border: 1px solid #e5e5e5;
+    margin-right: 80px;
+}
+
+label {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.redStar {
+    color: red;
+}
+
+.info {
+    display: inline-block;
+    background: url(../../assets/uT5.jpg) 100%/100% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.checkboxList {
+    float: left;
+    width: 100px;
+}
+
+.checkboxList label {
+    user-select: none;
+    display: inline-block;
+    width: auto;
+
+}

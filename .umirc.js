@@ -10,7 +10,7 @@ export default {
         { path: '/', component: '../pages/index' },
         { path: '/login', component: '../pages/login/login' },
         { path: '/list', component: '../pages/list/list' },
-        { path: '/inputs', component: '../pages/inputs/inputs' }
+        { path: '/inputs', component: '../pages/inputs/inputs' },
       ]
     }
   ],

@@ -22,7 +22,7 @@ function checkStatus(response) {
     return response;
   }
   if(response.status === 401 || response.status === 400){
-    console.log(response)
+    // console.log(response)
     // return  Api.logout('接口报错')
   }
   const error = new Error(response.statusText);
@@ -46,7 +46,7 @@ function customOptions(options) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
-  console.log(fetch)
+  // console.log(fetch)
 
   options = options || {}
   options.method = options.method ? options.method : 'POST';

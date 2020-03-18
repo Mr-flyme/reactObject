@@ -7,7 +7,14 @@ export default {
         userInfo: {
 
         },
-        listState: []
+        listState: [],
+        locats:
+        {
+            provinces: [],
+            cities: [],
+            counties: [],
+        }
+
     },
     effects: {
         *fetch({ payload }, { call, put }) {
@@ -56,11 +63,25 @@ export default {
                     payload: { listState: [...res.data] }
                 });
             }
+        },
+        *getLocat({ payload, history }, { call, put }) {
+            const res = yield call(request, "/api/locat", {
+                method: 'GET',
+                body: {
+                    payload
+                }
+            });
+            // const userInfo = yield put({ type: 'listState' })
+            if (res.rescode === 1) {
+                yield put({
+                    type: 'save',
+                    payload: { locats: res.data }
+                });
+            }
         }
     },
     reducers: {
         save(state, action) {
-            console.log('****', action)
             return { ...state, ...action.payload };
         },
     },
