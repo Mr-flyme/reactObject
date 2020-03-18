@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import styles from './list.css';
-import { Link, router } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'dva';
 
 class list extends Component {

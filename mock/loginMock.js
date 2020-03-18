@@ -46,7 +46,6 @@ export default {
 
   // 支持自定义函数，API 参考 express@4
   'POST /api/users/create': (req, res) => {
-    console.log(req)
     // if (req.username == 1) {
     //   res.status('200').send()
     //   res.data = {

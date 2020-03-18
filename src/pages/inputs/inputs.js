@@ -43,13 +43,12 @@ class inputs extends Component {
     }
     componentDidMount() {
         this.getLocat();
-        console.log(this.props.history.location.query.id)
+        console.log("id: ",this.props.history.location.query.id)
     }
     render() {
         let { provinces, cities, counties } = this.props.locats;
         let { provinceIndex, cityIndex } = this.state;
         if (provinceIndex > cityIndex) cityIndex = 0
-        console.log(this.refs)
         return (
             <div>
                 <ul className={styles.iptul}>

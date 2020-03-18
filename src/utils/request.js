@@ -14,7 +14,6 @@ const fetch = require('dva').fetch;
 // import {fetch} from 'dva';
 
 function parseJSON(response) {
-  console.log(response)
   return response.json();
 }
 
